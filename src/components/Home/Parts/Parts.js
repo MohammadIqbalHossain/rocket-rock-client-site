@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import DisplayParts from './DisplayParts';
 
 const Parts = () => {
+    
+    const [parts, setParts] = useState([]);
+
+    useEffect(() => {
+        fetch("Parts.json")
+        .then(res => res.json())
+        .then(data => setParts(data))
+    }, [])
+
     return (
-        <div>
-            <h1>This is parts page.</h1>
-        </div>
+       <div>
+           {
+               parts.map(part => <DisplayParts
+               key={part.index}
+               part={part}
+               ></DisplayParts>)
+           }
+       </div>
     );
 };
 
