@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
 
 
     const [navbarOpen, setNavbarOpen] = useState(false);
-    // const [user] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     // const handleSignOut = () => {
     //     signOut(() => {
@@ -70,31 +73,21 @@ const Header = () => {
                                     <span className="ml-2">Manage Items</span>
                                 </Link> 
                         </li>
+ 
+
 
                         <li className="nav-item">
-                            
-                                <Link
-                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75"
-                                    to="/add-books-inventory"
-                                >
-                                    <span className="ml-2">Add items</span>
-                                </Link> 
-                        </li>
-                        
-
-
-                        {/* <li className="nav-item">
                             {user ? <button onClick={() => signOut(auth)}
-                                className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug  hover:opacity-75"
                             >Sign Out
                             </button>
                                 : <Link
-                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75"
                                     to="/login"
                                 >
                                     <span className="ml-2">Login</span>
                                 </Link>}
-                        </li> */}
+                        </li>
                     </ul>
                 </div>
             </div>
