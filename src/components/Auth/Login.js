@@ -29,7 +29,7 @@ const Login = () => {
     let authError;
     if (error || googleError) {
         authError = <p className="text-sm text-red-600">
-            {error.message || googleError.message}
+            {error?.message || googleError?.message}
         </p>
     }
 
@@ -129,7 +129,7 @@ const Login = () => {
                     {authError}
                 </form>
 
-                <div class="divider mx-20">OR</div>
+                <div className="divider mx-20">OR</div>
 
                 <div className="flex justify-center items-center my-10">
                     <button className="flex items-center border-2 border-black p-3 rounded-lg text-lg hover:bg-primary hover:text-white"

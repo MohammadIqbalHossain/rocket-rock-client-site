@@ -6,6 +6,10 @@ import Home from './components/Home/Home';
 import Header from './components/Shared/Header';
 import RequireAuth from './components/Auth/RequireAuth'
 import Purchase from './components/Purchase/Purchase';
+import Dashboard from './components/Dashboard/Dashboard';
+import MyOrders from './components/Dashboard/MyOrders';
+import AddReview from './components/Dashboard/AddReview';
+import MyProfile from './components/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -15,9 +19,18 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
+
         <Route path='/purchase/:id' element={<RequireAuth>
            <Purchase />
         </RequireAuth>}>
+        </Route>
+
+        <Route path='/dashboard' element={<RequireAuth>
+           <Dashboard />
+        </RequireAuth>}>
+          <Route index element={<MyOrders />}></Route>
+          <Route path="dashboard/add-a-review" element={<AddReview />}></Route>
+          <Route path="dashboard/my-profile" element={<MyProfile />}></Route>
         </Route>
 
       </Routes>

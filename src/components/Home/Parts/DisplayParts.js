@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const DisplayParts = ({ part }) => {
-    const { Name, picture, des, price, index } = part;
+    const { Name, picture, des, price, _id } = part;
     return (
         <div className="flex justify-between items-center md:m-20 flex-col md:flex-row lg-flex-row ">
             <img src={picture} className="md:w-[600px]" alt="" />
@@ -12,7 +12,7 @@ const DisplayParts = ({ part }) => {
                 <h3>Minimun order quantity: </h3>
                 <h3>avilable quantity: </h3>
                 <p>Price: {price}</p>
-                <Link to={`/purchase/${index}`}>
+                <Link to={`/purchase/${_id}`}>
                     <button className="btn btn-primary my-5">Purchase Now</button>
                 </Link>
             </div>

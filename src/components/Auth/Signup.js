@@ -36,7 +36,7 @@ const Signup = () => {
         navigate("/")
     }
 
-    if(loading || googleLoading || updating){
+    if (loading || googleLoading || updating) {
         return <Spinner />
     }
 
@@ -147,7 +147,7 @@ const Signup = () => {
                     {authError}
                 </form>
 
-                <div class="divider mx-20">OR</div>
+                <div className="divider mx-20">OR</div>
 
                 <div className="flex justify-center items-center my-10">
                     <button className="flex items-center border-2 border-black p-3 rounded-lg text-lg hover:bg-primary hover:text-white"
