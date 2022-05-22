@@ -56,6 +56,16 @@ const Header = () => {
                                 <span className="ml-2">Home</span>
                             </Link>
                         </li>
+
+                        <li className="nav-item">
+                            <Link
+                                className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug  hover:opacity-75"
+                                to="/purchase"
+                            >
+                                <span className="ml-2">Purchase</span>
+                            </Link>
+                        </li>
+
                         <li className="nav-item">
                             <Link
                                 className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug  hover:opacity-75"
@@ -74,7 +84,6 @@ const Header = () => {
                                 </Link> 
                         </li>
  
-
 
                         <li className="nav-item">
                             {user ? <button onClick={() => signOut(auth)}

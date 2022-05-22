@@ -1,13 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { useForm } from 'react-hook-form';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
+import Spinner from '../Shared/Spinner';
 
 const Login = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
+
+
 
     const [
         signInWithEmailAndPassword,
@@ -24,8 +27,28 @@ const Login = () => {
     ] = useSignInWithGoogle(auth);
 
     let authError;
-    if(error || googleError){
-        authError = <p className="text-sm text-red-600">{error.message || googleError.message}</p>
+    if (error || googleError) {
+        authError = <p className="text-sm text-red-600">
+            {error.message || googleError.message}
+        </p>
+    }
+
+
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if (googleUser || user) {
+            navigate(from, { replace: true });
+        }
+    }, [user, googleUser]);
+
+
+    if (loading || googleLoading) {
+        return <Spinner />
     }
 
 
@@ -110,7 +133,7 @@ const Login = () => {
 
                 <div className="flex justify-center items-center my-10">
                     <button className="flex items-center border-2 border-black p-3 rounded-lg text-lg hover:bg-primary hover:text-white"
-                    onClick={() => signInWithGoogle()}
+                        onClick={() => signInWithGoogle()}
                     >
                         <FcGoogle className="mx-5 text-2xl" />
                         Continue with google
