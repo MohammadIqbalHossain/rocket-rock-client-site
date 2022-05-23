@@ -36,7 +36,7 @@ const Header = () => {
                             <AiOutlineMenu color="red" />
                         </button>
                         <button className="navLink ml-5">
-                            {pathname === "/dashboard" ? <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden text-black">
+                            {pathname === "/dashboard" || "/dashboard/dashboard/add-a-review" || "/dashboard/dashboard/my-profile" ? <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden text-black">
                                 open modal
                             </label>
 
