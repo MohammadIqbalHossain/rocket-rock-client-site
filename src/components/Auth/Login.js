@@ -57,6 +57,7 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password)
 
         const email = data.email
+        console.log(email);
         const url = `http://localhost:5000/login`
         fetch(url, {
             method: 'POST',

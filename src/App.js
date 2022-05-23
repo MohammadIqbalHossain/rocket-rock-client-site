@@ -16,6 +16,9 @@ import UpdateProfile from './components/Dashboard/UpdateProfile';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import MakeAdmin from './components/Dashboard/MakeAdmin';
+import RequireAdmin from './components/Auth/RequireAdmin';
+import AdminAddProduct from './components/Dashboard/AdminAddProduct';
 
 function App() {
   return (
@@ -45,6 +48,18 @@ function App() {
 
           <Route path="dashboard/updateProfile" element={<RequireAuth>
             <UpdateProfile />
+          </RequireAuth>}></Route>
+
+          <Route path="dashboard/makeAdmin" element={<RequireAuth>
+            <RequireAdmin>
+              <MakeAdmin />
+            </RequireAdmin>
+          </RequireAuth>}></Route>
+
+          <Route path="dashboard/add-a-product" element={<RequireAuth>
+            <RequireAdmin>
+              <AdminAddProduct />
+            </RequireAdmin>
           </RequireAuth>}></Route>
 
           <Route path="dashboard/my-profile" element={<MyProfile />}></Route>
