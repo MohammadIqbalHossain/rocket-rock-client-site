@@ -8,9 +8,10 @@ const MyProfile = () => {
 
     const [user] = useAuthState(auth);
 
-    const handleProfileSubmit = (e) => {
+    const handleProfileUpdate = (e) => {
         e.preventDefault();
 
+        
         const profileInfo = {
             email: user.email,
             name: user.displayName,
@@ -21,8 +22,9 @@ const MyProfile = () => {
             phone: e.target.phone.value
         }
 
-        fetch(`http://localhost:5000/profile`, {
-            method: 'POST',
+
+        fetch(`http://localhost:5000/update/${user?.email}`, {
+            method: 'PUT',
             headers: {
                 "content-type": "application/json"
             },
@@ -32,13 +34,14 @@ const MyProfile = () => {
             .then(data => {
                 console.log(data)
                 if(data.success){
-                    toast("Your profile is added")
+                    toast("Your profile is Updated")
                 }
                 else{
                     toast.error("It seems their something wrong");
                 }
             })
 
+        
     }
 
 
@@ -46,8 +49,8 @@ const MyProfile = () => {
         <div className="flex flex-col justify-center items-center h-[80vh]">
             <div class="card flex-shrink-0 w-full max-w-3xl shadow-2xl bg-base-100 mt-20">
 
-                <form class="card-body" onSubmit={handleProfileSubmit}>
-                    <h1 className="text-lg">Give your information.</h1>
+                <form class="card-body" onSubmit={handleProfileUpdate}>
+                    <h1 className="text-lg">Update your profile.</h1>
 
                     <div class="flex ">
                         <div>
@@ -103,9 +106,9 @@ const MyProfile = () => {
                     </div>
 
                     <div class="form-control mt-6 mx-50">
-                        <input class="btn btn-primary block mx-52" type="submit" value="submit" />
+                        <input class="btn btn-primary block mx-52" type="submit" value="Update" />
                     </div>
-                    <Link to="/dashboard/dashboard/updateProfile" class="text-blue-600 hover:text-blue-700">Update profile&rarr;</Link>
+                   
                 </form>
 
             </div>

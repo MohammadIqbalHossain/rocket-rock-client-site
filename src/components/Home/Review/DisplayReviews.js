@@ -24,8 +24,8 @@ const DisplayReviews = ({ reviews }) => {
                                             </svg>
                                         </span>
                                         <p class="capitalize ml-2">
-                                            {name}
-                                            {/* <code class="text-sm font-bold text-gray-900 lowercase">tailwind.config.js</code> file */}
+                                            Name: {name}
+                                           
                                         </p>
                                     </li>
                                     <li class="flex items-start">
@@ -35,8 +35,8 @@ const DisplayReviews = ({ reviews }) => {
                                             </svg>
                                         </span>
                                         <p class="capitalize ml-2">
-                                            {email}
-                                            {/* <code class="text-sm font-bold text-gray-900 lowercase">@apply</code> file */}
+                                          Email: {email}
+                                           
                                         </p>
                                     </li>
                                     <li class="flex items-start">
@@ -45,7 +45,7 @@ const DisplayReviews = ({ reviews }) => {
                                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                             </svg>
                                         </span>
-                                        <p class="capitalize ml-2">{ratings}</p>
+                                        <p class="capitalize ml-2"> Ratings:{ratings}</p>
                                     </li>
                                 </ul>
                                 <p>If You want to give us a review like this please visit reviw page in the dashboard, Your review is matter, it's make us inspires us to make more beautiful engines that you like.</p>
