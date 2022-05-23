@@ -11,26 +11,31 @@ const Purchase = () => {
     const [purchase, setPurchase] = useState({});
     console.log(purchase)
 
-      useEffect(() => {
-          fetch(`http://localhost:5000/parts/${id}`)
-          .then(res => res.json())
-          .then(data => setPurchase(data))
-      }, [])
-
-      
-      const minQuantity = purchase.quantity
-      console.log(minQuantity)
-      const [minOrder, setMinOrder] = useState(0);
-      console.log(minOrder)
-
-      const decreseQuntity = () => {
-            let quantity = parseInt(minOrder) - 1
-            if(quantity < purchase.minOrderQuantity){
-                toast.error("You can't decrease more!")
-               
+    useEffect(() => {
+        fetch(`http://localhost:5000/parts/${id}`, {
+            method: 'GET',
+            headers: {
+                authorization: `bearer ${localStorage.getItem("accessToken")}`
             }
-            setMinOrder(quantity)
-      }
+        })
+            .then(res => res.json())
+            .then(data => setPurchase(data))
+    }, [])
+
+
+    const minQuantity = purchase.quantity
+    console.log(minQuantity)
+    const [minOrder, setMinOrder] = useState(0);
+    console.log(minOrder)
+
+    const decreseQuntity = () => {
+        let quantity = parseInt(minOrder) - 1
+        if (quantity < purchase.minOrderQuantity) {
+            toast.error("You can't decrease more!")
+
+        }
+        setMinOrder(quantity)
+    }
 
 
     return (
@@ -52,14 +57,14 @@ const Purchase = () => {
                                         </li>
                                         <li className="m-1">
                                             <Link className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" to="#0">
-                                            Minimum quantity:{purchase.minOrderQuantity}
+                                                Minimum quantity:{purchase.minOrderQuantity}
                                             </Link>
                                         </li>
                                     </ul>
                                 </div>
                                 <h3 className="text-2xl md:text-left lg:text-3xl font-bold leading-tight mb-2">
                                     <p className="hover:text-gray-100 transition duration-150 ease-in-out text-3xl text-bold" >
-                                    {purchase.Name}
+                                        {purchase.Name}
                                     </p>
                                 </h3>
                             </header>
@@ -77,7 +82,7 @@ const Purchase = () => {
                                     <p className="font-medium text-gray-200 hover:text-gray-100 transition duration-150 ease-in-out inline">
                                         Made in
                                     </p>
-                                  
+
                                     <span className="text-gray-700"> - </span>
                                     <span className="text-gray-500">Jan 19, 2020</span>
                                 </div>
@@ -93,7 +98,7 @@ const Purchase = () => {
                             <button className='btn btn-primary' onClick={decreseQuntity}>Increase</button>
 
                         </div>
-                        <PuarchaseModal minQuantity={minOrder}/>
+                        <PuarchaseModal minQuantity={minOrder} />
                     </article>
                 </div>
             </section>

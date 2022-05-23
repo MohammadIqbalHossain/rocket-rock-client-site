@@ -13,6 +13,7 @@ const DisplayOrders = ({ order, index, myOrders, setMyOrders }) => {
         if (confirmation) {
             fetch(`http://localhost:5000/orders/${_id}`, {
                 method: 'DELETE',
+                
             })
                 .then(res => res.json())
                 .then(data => {

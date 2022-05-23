@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import DisplayOrders from './DisplayOrders';
 
 const MyOrders = () => {
 
     const [myOrders, setMyOrders] = useState([]);
+    const [user] = useAuthState(auth);
+    const email = user.email;
+    
     
 
     useEffect(() => {
-        fetch('http://localhost:5000/myOrders')
+        fetch(`http://localhost:5000/myOrders/${email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, [])

@@ -25,16 +25,18 @@ const PuarchaseModal = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
+                authorization: `bearer ${localStorage.getItem("accessToken")}`
+
             },
-            body: JSON.stringify( order )
+            body: JSON.stringify(order)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.success){
+                if (data.success) {
                     toast(`successfull orderd`)
                 }
-                else{
+                else {
                     toast.error(`Something went wrong`);
                 }
             })
