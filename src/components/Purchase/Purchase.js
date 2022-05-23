@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import PuarchaseModal from './PurchaseModal';
 
 const Purchase = () => {
@@ -15,6 +16,21 @@ const Purchase = () => {
           .then(res => res.json())
           .then(data => setPurchase(data))
       }, [])
+
+      
+      const minQuantity = purchase.quantity
+      console.log(minQuantity)
+      const [minOrder, setMinOrder] = useState(0);
+      console.log(minOrder)
+
+      const decreseQuntity = () => {
+            let quantity = parseInt(minOrder) - 1
+            if(quantity < purchase.minOrderQuantity){
+                toast.error("You can't decrease more!")
+               
+            }
+            setMinOrder(quantity)
+      }
 
 
     return (
@@ -32,11 +48,11 @@ const Purchase = () => {
                                 <div className="mb-3">
                                     <ul className="flex flex-wrap text-xs font-medium -m-1">
                                         <li className="m-1">
-                                            <Link className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out" to="#0"> Quantity:  {purchase.quantity}</Link>
+                                            <Link className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out" to="#0"> Quantity:  {minOrder > purchase.minOrderQuantity ? minOrder : purchase.quantity}</Link>
                                         </li>
                                         <li className="m-1">
                                             <Link className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" to="#0">
-                                               {/* some */}
+                                            Minimum quantity:{purchase.minOrderQuantity}
                                             </Link>
                                         </li>
                                     </ul>
@@ -74,9 +90,10 @@ const Purchase = () => {
                             <div className="flex justify-start my-5">
                                 <label for="my-modal-6" className="btn modal-button">Place order</label>
                             </div>
+                            <button className='btn btn-primary' onClick={decreseQuntity}>Increase</button>
 
                         </div>
-                        <PuarchaseModal />
+                        <PuarchaseModal minQuantity={minOrder}/>
                     </article>
                 </div>
             </section>

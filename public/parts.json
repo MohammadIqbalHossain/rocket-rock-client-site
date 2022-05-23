@@ -4,8 +4,7 @@
     "price": "$20004.31",
     "picture": "https://d3ezn0y6hdgq62.cloudfront.net/assets/BlueOrigin_BE4_EngineLineup.jpg",
     "Name": "BE-4 Engine",
-    
-    "min-order-quantity": 100,
+    "minOrderQuantity": 100,
     "quantity": 500,
     "des": "The first ox-rich staged combustion engine made in the U.S. will power the next generation of American orbital rockets."
   },
@@ -14,7 +13,7 @@
     "price": "$34444.31",
     "picture": "https://d3ezn0y6hdgq62.cloudfront.net/assets/BlueOrigin_NewShepard_BoosterLandingAlternate3.jpg",
     "Name": "BE-3 Engine",
-    "min-order-quantity": 100,
+    "minOrderQuantity": 100,
     "quantity": 1000,
     "des": "The BE-3 is the first new liquid hydrogen-fueled rocket engine to be developed for production in America in over a decade."
   },
@@ -23,7 +22,7 @@
     "price": "$3944.31",
     "picture": "https://d3ezn0y6hdgq62.cloudfront.net/assets/blueorigin_be7_web.jpg",
     "Name": "BE-7 Engine",
-    "min-order-quantity": 100,
+    "minOrderQuantity": 100,
     "quantity": 3000,
     "des": "BE-7 is an additively manufactured, high-performance, dual-expander cycle engine, generating 40 kN (10,000 lbf) thrust."
   }
