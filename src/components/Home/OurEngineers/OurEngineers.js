@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
 const OurEngineers = () => {
+    const { pathname } = useLocation();
     return (
         <div>
-
+            {pathname === '/' && <h1 className="text-center font-extrabold uppercase text-4xl mt-20">Know about our Crew</h1>}
             <div className="flex justify-center my-20 gap-8">
 
                 <Link to="/ourEngineers">
@@ -18,7 +19,6 @@ const OurEngineers = () => {
 
             <div>
                 <Outlet />
-                {/* <h2 className="text-4xl text-center font-extrabold uppercase mt-20 text-blue-300">About Our Crew</h2> */}
             </div>
         </div>
     );

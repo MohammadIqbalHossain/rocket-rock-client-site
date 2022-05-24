@@ -12,7 +12,7 @@ const Header = () => {
     const [user] = useAuthState(auth);
 
     const { pathname } = useLocation();
-    
+
 
 
     return (
@@ -28,20 +28,20 @@ const Header = () => {
                             RocketRock
                         </Link>
                         <div className="flex ">
-                        <button
-                            className=" cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-red-200 block lg:hidden outline-none focus:outline-none"
-                            type="button"
-                            onClick={() => setNavbarOpen(!navbarOpen)}
-                        >
-                            <AiOutlineMenu color="red" />
-                        </button>
-                        <button className="navLink ml-5">
-                            {pathname === "/dashboard" || "/dashboard/dashboard/add-a-review" || "/dashboard/dashboard/my-profile" ? <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden text-black">
-                                open modal
-                            </label>
+                            <button
+                                className=" cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-red-200 block lg:hidden outline-none focus:outline-none"
+                                type="button"
+                                onClick={() => setNavbarOpen(!navbarOpen)}
+                            >
+                                <AiOutlineMenu color="red" />
+                            </button>
+                            <button className="navLink ml-5">
+                                {pathname === "/dashboard" || "/dashboard/dashboard/add-a-review" || "/dashboard/dashboard/my-profile" ? <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden text-black">
+                                    open modal
+                                </label>
 
-                                : ""}
-                        </button>
+                                    : ""}
+                            </button>
                         </div>
                     </div>
                     <div
@@ -101,9 +101,18 @@ const Header = () => {
                                         <span className="ml-2">Login</span>
                                     </Link>}
                             </li>
+                            <li className="nav-item">
 
+                                <p
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug  hover:opacity-75"
+
+                                >
+                                    <span className="ml-1  text-xs rounded">
+                                        {user?.displayName.slice(0, 5)}
+                                    </span>
+                                </p>
+                            </li>
                         </ul>
-
                     </div>
                 </div>
             </nav>

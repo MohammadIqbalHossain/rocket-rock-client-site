@@ -3,13 +3,13 @@ import React from 'react';
 const DisplayOrders = ({ order, index, myOrders, setMyOrders }) => {
 
 
-    const { name, email, address, _id } = order;
+    const { name, email, address, _id, paid } = order;
 
 
 
     const handleDelete = () => {
 
-        const confirmation = window.confirm("Are you sure?")
+        const confirmation = window.confirm("Are You sure?")
         if (confirmation) {
             fetch(`http://localhost:5000/orders/${_id}`, {
                 method: 'DELETE',
@@ -37,8 +37,10 @@ const DisplayOrders = ({ order, index, myOrders, setMyOrders }) => {
                 <button onClick={handleDelete} className="btn btn-error btn-sm">Cencel</button>
             </td>
             <td>
-                <button className="btn btn-success btn-sm">pay</button>
+               {(!paid) &&  <button className="btn btn-success btn-sm">pay</button>}
+               {paid && <p>Paid</p>}
             </td>
+           
         </tr>
 
 

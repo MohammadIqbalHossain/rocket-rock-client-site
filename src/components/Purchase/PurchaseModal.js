@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init'
 
-const PuarchaseModal = () => {
+const PuarchaseModal = ({ minQuantity, quantity }) => {
 
     const [user] = useAuthState(auth);
 
@@ -16,8 +16,21 @@ const PuarchaseModal = () => {
             email: user.email,
             name: user.displayName,
             phone: e.target.phone.value,
-            address: e.target.address.value
+            address: e.target.address.value,
+            quantity: e.target.quantity.value
         }
+
+        console.log(order.quantity);
+        console.log(quantity);
+
+        const btn = document.getElementById("inputEl")
+
+        if (order.quantity < minQuantity || (order.quantity > quantity)) {
+            toast.error("You are out of our range")
+            btn.classList("disabled");
+            return;
+        }
+
 
         console.log(order.phone, order.address);
 
@@ -82,8 +95,15 @@ const PuarchaseModal = () => {
                         <input type="text" name="address" placeholder="Adress" className="input input-bordered " />
                     </div>
 
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Quantity</span>
+                        </label>
+                        <input type="number" name="quantity" placeholder="Quantity" className="input input-bordered " />
+                    </div>
+
                     <div className="">
-                        <input className="btn btn-primary w-full my-5" type="submit" value="Submit" />
+                        <input id="inputEl" className="btn btn-primary w-full my-5" type="submit" value="Submit" />
                     </div>
                 </form>
             </div>

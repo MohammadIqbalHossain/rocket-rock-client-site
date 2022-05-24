@@ -4,6 +4,7 @@ import DisplayParts from './DisplayParts';
 const Parts = () => {
     
     const [parts, setParts] = useState([]);
+    console.log(parts);
 
     useEffect(() => {
         fetch("http://localhost:5000/parts")

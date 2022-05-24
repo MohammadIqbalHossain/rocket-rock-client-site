@@ -1,4 +1,5 @@
 import React from 'react';
+import AboutRocketRock from './AboutRocketRock/AboutRocketRock';
 import Banner from './Banner/Banner';
 import BusinessSummary from './BusinessSummary/BusinessSummary';
 import OurEngineers from './OurEngineers/OurEngineers';
@@ -13,6 +14,7 @@ const Home = () => {
             <Review />
             <BusinessSummary />
             <OurEngineers />
+            <AboutRocketRock />
         </div>
     );
 };
