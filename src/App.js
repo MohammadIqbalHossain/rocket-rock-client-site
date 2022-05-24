@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Login from './components/Auth/Login';
 import Signup from './components/Auth/Signup';
@@ -19,8 +19,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import MakeAdmin from './components/Dashboard/MakeAdmin';
 import RequireAdmin from './components/Auth/RequireAdmin';
 import AdminAddProduct from './components/Dashboard/AdminAddProduct';
+import ManageProducts from './components/Dashboard/ManageProducts';
+import Footer from './components/Shared/Footer';
 
 function App() {
+
+  const { pathname } = useLocation();;
+
   return (
     <div className="App">
       <Header />
@@ -62,10 +67,19 @@ function App() {
             </RequireAdmin>
           </RequireAuth>}></Route>
 
+          <Route path="dashboard/manage-products" element={<RequireAuth>
+            <RequireAdmin>
+              <ManageProducts />
+            </RequireAdmin>
+          </RequireAuth>}></Route>
+
           <Route path="dashboard/my-profile" element={<MyProfile />}></Route>
         </Route>
 
       </Routes>
+        {
+          pathname === "/" &&  <Footer />
+        }
       <ToastContainer />
     </div>
   );

@@ -6,7 +6,7 @@ const DisplayReviews = ({ reviews }) => {
     const { name, email, review, ratings } = reviews;
     return (
         <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-            <div class="relative py-3 sm:max-w-xl sm:mx-auto mx-3 my-4 w-[500px] ">
+            <div class="relative py-3 md:max-w-lg sm:mx-auto mx-3 my-4 md:w-[500px] ">
                 <div class="rounded-3xl absolute inset-0 bg-gradient-to-r from-blue-400 to-red-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
                 <div class="rounded-3xl relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
                     <div class="max-w-md mx-auto">

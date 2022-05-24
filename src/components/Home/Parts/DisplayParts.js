@@ -5,8 +5,8 @@ const DisplayParts = ({ part }) => {
     const { Name, picture, des, price, _id } = part;
     return (
         <div className="flex justify-between items-center md:m-20 flex-col md:flex-row lg-flex-row ">
-            <img src={picture} className="md:w-[600px]" alt="" />
-            <div className="md:w-[400px] md:m-20 m-10">
+            <img src={picture} className="md:w-[600px] m-10" alt="" />
+            <div className="md:w-[400px] md:m-20 ">
                 <h1 className="text-4xl font-bold my-5">{Name}</h1>
                 <p className="text-lg my-2">{des}</p>
                 <h3>Minimun order quantity: </h3>
