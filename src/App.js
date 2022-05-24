@@ -21,6 +21,9 @@ import RequireAdmin from './components/Auth/RequireAdmin';
 import AdminAddProduct from './components/Dashboard/AdminAddProduct';
 import ManageProducts from './components/Dashboard/ManageProducts';
 import Footer from './components/Shared/Footer';
+import MisssionSpecialist from './components/Home/OurEngineers/MisssionSpecialist';
+import OurEngineers from './components/Home/OurEngineers/OurEngineers';
+import SystemEngineer from './components/Home/OurEngineers/SystemEngineer';
 
 function App() {
 
@@ -33,6 +36,13 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
+
+        <Route path='/ourEngineers' element={<OurEngineers />}>
+
+        <Route index element={<MisssionSpecialist />}></Route>
+        <Route path="/ourEngineers/system-enginner" element={<SystemEngineer />}></Route>
+
+        </Route>
 
         <Route path='/purchase/:id' element={<RequireAuth>
           <Purchase />

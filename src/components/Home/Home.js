@@ -1,7 +1,7 @@
 import React from 'react';
-import Footer from '../Shared/Footer';
 import Banner from './Banner/Banner';
 import BusinessSummary from './BusinessSummary/BusinessSummary';
+import OurEngineers from './OurEngineers/OurEngineers';
 import Parts from './Parts/Parts';
 import Review from './Review/Review';
 
@@ -12,6 +12,7 @@ const Home = () => {
             <Parts />
             <Review />
             <BusinessSummary />
+            <OurEngineers />
         </div>
     );
 };
