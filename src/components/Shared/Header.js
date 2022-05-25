@@ -82,9 +82,9 @@ const Header = () => {
 
                                 <Link
                                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug  hover:opacity-75"
-                                    to="/manage-inventories"
+                                    to="/myPortfolio"
                                 >
-                                    <span className="ml-2">Manage Items</span>
+                                    <span className="ml-2">My Portfolio</span>
                                 </Link>
                             </li>
 
@@ -108,7 +108,7 @@ const Header = () => {
 
                                 >
                                     <span className="ml-1  text-xs rounded">
-                                        {user?.displayName}
+                                        {user?.email.slice(0, 5)}
                                     </span>
                                 </p>
                             </li>

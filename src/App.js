@@ -27,6 +27,7 @@ import SystemEngineer from './components/Home/OurEngineers/SystemEngineer';
 import Payment from './components/Dashboard/Payment';
 import NotFound from './components/Shared/NotFound';
 import Blogs from './components/Blogs/Blogs';
+import MyPortfolio from './components/MyPortfolio/MyPortfolio';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/blogs' element={<Blogs />}></Route>
+        <Route path='/myPortfolio' element={<MyPortfolio />}></Route>
 
 
         <Route path='/ourEngineers' element={<OurEngineers />}>
