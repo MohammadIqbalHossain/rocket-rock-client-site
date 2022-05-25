@@ -17,7 +17,7 @@ const Purchase = () => {
     console.log(purchase)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/parts/${id}`, {
+        fetch(`https://nameless-reaches-54875.herokuapp.com/parts/${id}`, {
             method: 'GET',
             headers: {
                 authorization: `bearer ${localStorage.getItem("accessToken")}`
@@ -109,9 +109,9 @@ const Purchase = () => {
                         </div>
                         <PuarchaseModal
                             minQuantity={purchase.minOrderQuantity}
-                            quantity={purchase.quantity} 
+                            quantity={purchase.quantity}
                             priceNum={purchase.price}
-                            />
+                        />
                     </article>
                 </div>
             </section>

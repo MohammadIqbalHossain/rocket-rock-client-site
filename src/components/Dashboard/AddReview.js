@@ -18,20 +18,20 @@ const AddReview = () => {
 
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://nameless-reaches-54875.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify( review )
+            body: JSON.stringify(review)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.success){
+                if (data.success) {
                     toast(`successfull orderd`)
                 }
-                else{
+                else {
                     toast.error(`Something went wrong`);
                 }
             })
@@ -49,7 +49,7 @@ const AddReview = () => {
                     </label>
                     <textarea class="textarea textarea-success" name="review" placeholder="Bio"></textarea>
 
-                    <input className="input input-group-sm mt-5  border-2" placeholder="Ratings"  type="number" name="ratings" id="" min="0" max="10"  />
+                    <input className="input input-group-sm mt-5  border-2" placeholder="Ratings" type="number" name="ratings" id="" min="0" max="10" />
 
                     <input className="btn btn-primary mt-5" type="submit" value="Submit" />
                 </div>

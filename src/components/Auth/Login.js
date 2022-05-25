@@ -58,7 +58,7 @@ const Login = () => {
 
         const email = data.email
         console.log(email);
-        const url = `http://localhost:5000/login`
+        const url = `https://nameless-reaches-54875.herokuapp.com/login`
         fetch(url, {
             method: 'POST',
             headers: {

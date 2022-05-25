@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const AdminAddProduct = () => {
-   
+
     const handleAddProduct = (e) => {
         e.preventDefault();
 
@@ -16,20 +16,20 @@ const AdminAddProduct = () => {
         }
         console.log(productDetails)
 
-        fetch('http://localhost:5000/addProduct', {
+        fetch('https://nameless-reaches-54875.herokuapp.com/addProduct', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify( productDetails )
+            body: JSON.stringify(productDetails)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.success){
+                if (data.success) {
                     toast(`successfull Added`)
                 }
-                else{
+                else {
                     toast.error(`Something went wrong`);
                 }
             })
@@ -89,10 +89,10 @@ const AdminAddProduct = () => {
                         <label class="label">
                             <span class="label-text">Description</span>
                         </label>
-                        <textarea name="des" class="textarea textarea-info"  cols="58" placeholder="des.."></textarea>
+                        <textarea name="des" class="textarea textarea-info" cols="58" placeholder="des.."></textarea>
                     </div>
                     <div class="form-control mt-6">
-                        <input class="btn btn-primary" type="submit" value="submit"/>
+                        <input class="btn btn-primary" type="submit" value="submit" />
                     </div>
                 </form>
             </div>

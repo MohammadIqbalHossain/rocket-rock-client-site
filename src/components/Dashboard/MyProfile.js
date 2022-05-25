@@ -21,7 +21,7 @@ const MyProfile = () => {
             phone: e.target.phone.value
         }
 
-        fetch(`http://localhost:5000/profile`, {
+        fetch(`https://nameless-reaches-54875.herokuapp.com/profile`, {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
@@ -31,10 +31,10 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.success){
+                if (data.success) {
                     toast("Your profile is added")
                 }
-                else{
+                else {
                     toast.error("It seems their something wrong");
                 }
             })

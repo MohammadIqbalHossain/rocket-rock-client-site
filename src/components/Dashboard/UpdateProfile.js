@@ -11,7 +11,7 @@ const MyProfile = () => {
     const handleProfileUpdate = (e) => {
         e.preventDefault();
 
-        
+
         const profileInfo = {
             email: user.email,
             name: user.displayName,
@@ -23,7 +23,7 @@ const MyProfile = () => {
         }
 
 
-        fetch(`http://localhost:5000/update/${user?.email}`, {
+        fetch(`https://nameless-reaches-54875.herokuapp.com/update/${user?.email}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
@@ -33,15 +33,15 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.success){
+                if (data.success) {
                     toast("Your profile is Updated")
                 }
-                else{
+                else {
                     toast.error("It seems their something wrong");
                 }
             })
 
-        
+
     }
 
 
@@ -108,7 +108,7 @@ const MyProfile = () => {
                     <div class="form-control mt-6 mx-50">
                         <input class="btn btn-primary block mx-52" type="submit" value="Update" />
                     </div>
-                   
+
                 </form>
 
             </div>

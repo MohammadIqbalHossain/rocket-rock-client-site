@@ -1,20 +1,20 @@
 import React from 'react';
 
-const ShowManageProducts = ({ product, refetch}) => {
+const ShowManageProducts = ({ product, refetch }) => {
 
     const handleDelete = () => {
-        
+
         const id = product._id;
         const confirmation = window.confirm("Are you sure?")
         if (confirmation) {
-            fetch(`http://localhost:5000/manageProdutc/${id}`, {
+            fetch(`https://nameless-reaches-54875.herokuapp.com/manageProdutc/${id}`, {
                 method: 'DELETE',
-                
+
             })
                 .then(res => res.json())
                 .then(data => {
-                   console.log(data)
-                   refetch() 
+                    console.log(data)
+                    refetch()
                 })
         }
     }

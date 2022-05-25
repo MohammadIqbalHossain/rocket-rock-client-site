@@ -14,7 +14,7 @@ const Payment = () => {
 
     const { id } = useParams()
 
-    const url = `http://localhost:5000/payment/${id}`;
+    const url = `https://nameless-reaches-54875.herokuapp.com/payment/${id}`;
 
     const { data: orders, isLoading, refetch } = useQuery(['orders', id], () => fetch(url, {
         method: "GET",
@@ -33,19 +33,19 @@ const Payment = () => {
                 <div class="card-body">
 
                     <h1 class="card-title uppercase">Pay for confirm order</h1>
-                    <p>Pay for Your order we will contact you at <span className="text-green-500">{orders.email}</span> or <span className="text-green-500">{orders.phone}</span>, Please pay 
-                    {orders.price}</p>
+                    <p>Pay for Your order we will contact you at <span className="text-green-500">{orders.email}</span> or <span className="text-green-500">{orders.phone}</span>, Please pay
+                        {orders.price}</p>
 
                 </div>
             </div>
             <div class="w-[400px] bg-white my-10 p-20 rounded-lg">
-               
 
-                    <Elements stripe={stripePromise}>
-                        <CheckoutForm orders={orders}/>
-                    </Elements>
 
-               
+                <Elements stripe={stripePromise}>
+                    <CheckoutForm orders={orders} />
+                </Elements>
+
+
             </div>
         </div>
     );

@@ -12,18 +12,18 @@ const CheckoutForm = ({ orders }) => {
     const [transactionId, setTransactionId] = useState("");
     const [processing, setProcessig] = useState(false);
 
-    
+
 
     const { _id, price, name, address } = orders;
     const priceNum = parseInt(price);
     console.log(priceNum)
 
-   
+
 
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://nameless-reaches-54875.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': "application/json",
@@ -102,9 +102,9 @@ const CheckoutForm = ({ orders }) => {
             }
 
 
-          console.log(_id)
-          console.log(payment)
-            fetch(`http://localhost:5000/order/${_id}`, {
+            console.log(_id)
+            console.log(payment)
+            fetch(`https://nameless-reaches-54875.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

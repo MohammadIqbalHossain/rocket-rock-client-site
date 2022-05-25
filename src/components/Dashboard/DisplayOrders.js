@@ -12,7 +12,7 @@ const DisplayOrders = ({ order, index, myOrders, setMyOrders }) => {
 
         const confirmation = window.confirm("Are You sure?")
         if (confirmation) {
-            fetch(`http://localhost:5000/orders/${_id}`, {
+            fetch(`https://nameless-reaches-54875.herokuapp.com/orders/${_id}`, {
                 method: 'DELETE',
 
             })

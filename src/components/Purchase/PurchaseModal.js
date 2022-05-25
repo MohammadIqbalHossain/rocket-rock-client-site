@@ -6,7 +6,7 @@ import auth from '../../firebase.init'
 const PuarchaseModal = ({ minQuantity, quantity, priceNum }) => {
 
     const [user] = useAuthState(auth);
-   const price = parseInt(priceNum)
+    const price = parseInt(priceNum)
 
 
     const submitOrder = (e) => {
@@ -35,7 +35,7 @@ const PuarchaseModal = ({ minQuantity, quantity, priceNum }) => {
 
         console.log(order.phone, order.address);
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://nameless-reaches-54875.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

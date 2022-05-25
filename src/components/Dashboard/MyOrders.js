@@ -8,17 +8,17 @@ const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
     const [user] = useAuthState(auth);
     const email = user.email;
-    
-    
+
+
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${email}`)
+        fetch(`https://nameless-reaches-54875.herokuapp.com/myOrders/${email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, [])
 
-    
-    
+
+
 
     return (
         <div>
@@ -36,15 +36,15 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
 
-                       {
-                           myOrders.map((order, index)=> <DisplayOrders
-                           key={order._id}
-                           order={order}
-                           index={index}
-                           myOrders={myOrders}
-                           setMyOrders={setMyOrders}
-                           ></DisplayOrders> )
-                       }
+                        {
+                            myOrders.map((order, index) => <DisplayOrders
+                                key={order._id}
+                                order={order}
+                                index={index}
+                                myOrders={myOrders}
+                                setMyOrders={setMyOrders}
+                            ></DisplayOrders>)
+                        }
 
                     </tbody>
                 </table>
