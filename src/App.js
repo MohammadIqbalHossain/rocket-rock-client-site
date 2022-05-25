@@ -63,7 +63,7 @@ function App() {
           <Dashboard />
         </RequireAuth>}>
 
-          <Route index element={<RequireAuth>
+          <Route path='/dashboard/my-orders' element={<RequireAuth>
             <MyOrders />
           </RequireAuth>}></Route>
 
@@ -105,7 +105,7 @@ function App() {
 
           </Route>
 
-          <Route path="dashboard/my-profile" element={<MyProfile />}></Route>
+          <Route index element={<MyProfile />}></Route>
         </Route>
 
         <Route path="*" element={<NotFound />}></Route>

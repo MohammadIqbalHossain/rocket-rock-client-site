@@ -24,7 +24,7 @@ const Dashboard = () => {
                     {/* <!-- Sidebar content here --> */}
 
                     {!admin && <li>
-                        <Link to='/dashboard'>My Orders</Link>
+                        <Link to="/dashboard/my-orders">My Orders</Link>
                     </li>
                     }
 
@@ -33,12 +33,9 @@ const Dashboard = () => {
                     </li>
                     }
 
-
-                    
-
-
+                    {/* dashboard/my-profile */}
                     <li>
-                        <Link to="dashboard/my-profile">My Profile</Link>
+                        <Link to="/dashboard">My Profile</Link>
                     </li>
                     {
                         admin && <li>
