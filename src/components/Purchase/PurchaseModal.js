@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init'
 
-const PuarchaseModal = ({ minQuantity, quantity, priceNum }) => {
+const PuarchaseModal = ({ minQuantity, quantity, priceNum, Name }) => {
+
+    const [quantityError, setQuantityError] = useState(false);
 
     const [user] = useAuthState(auth);
     const price = parseInt(priceNum)
+    console.log(user.displayName);
 
 
     const submitOrder = (e) => {
@@ -14,7 +17,7 @@ const PuarchaseModal = ({ minQuantity, quantity, priceNum }) => {
 
         const order = {
             email: user.email,
-            name: user.displayName,
+            name: Name,
             price,
             phone: e.target.phone.value,
             address: e.target.address.value,
@@ -24,13 +27,16 @@ const PuarchaseModal = ({ minQuantity, quantity, priceNum }) => {
         console.log(order.quantity);
         console.log(quantity);
 
-        const btn = document.getElementById("inputEl")
+        
 
         if (order.quantity < minQuantity || (order.quantity > quantity)) {
             toast.error("You are out of our range")
-            btn.classList("disabled");
+            setQuantityError(true);
+           
             return;
         }
+
+        setQuantityError(false)
 
 
         console.log(order.phone, order.address);
@@ -104,8 +110,9 @@ const PuarchaseModal = ({ minQuantity, quantity, priceNum }) => {
                     </div>
 
                     <div className="">
-                        <input id="inputEl" className="btn btn-primary w-full my-5" type="submit" value="Submit" />
+                        <input  className="btn btn-primary w-full my-5" type="submit" value="Submit" />
                     </div>
+
                 </form>
             </div>
         </div >

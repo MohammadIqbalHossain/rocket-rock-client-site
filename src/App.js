@@ -25,6 +25,8 @@ import MisssionSpecialist from './components/Home/OurEngineers/MisssionSpecialis
 import OurEngineers from './components/Home/OurEngineers/OurEngineers';
 import SystemEngineer from './components/Home/OurEngineers/SystemEngineer';
 import Payment from './components/Dashboard/Payment';
+import NotFound from './components/Shared/NotFound';
+import Blogs from './components/Blogs/Blogs';
 
 function App() {
 
@@ -37,6 +39,8 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
+        <Route path='/blogs' element={<Blogs />}></Route>
+
 
         <Route path='/ourEngineers' element={<OurEngineers />}>
 
@@ -95,10 +99,20 @@ function App() {
           <Route path="dashboard/my-profile" element={<MyProfile />}></Route>
         </Route>
 
+        <Route path="*" element={<NotFound />}></Route>
+
       </Routes>
+
       {
         pathname === "/" && <Footer />
       }
+      {
+        pathname === "/blogs" && <Footer />
+      }
+       {
+        pathname === "/login" && <Footer />
+      }
+      
       <ToastContainer />
     </div>
   );

@@ -111,6 +111,7 @@ const Purchase = () => {
                             minQuantity={purchase.minOrderQuantity}
                             quantity={purchase.quantity}
                             priceNum={purchase.price}
+                            Name={purchase.Name}
                         />
                     </article>
                 </div>
