@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const DisplayOrders = ({ order, index, myOrders, setMyOrders }) => {
 
 
-    const { name, email, address, _id, paid } = order;
+    const { name, email, address, _id, paid, transjactionId } = order;
 
-
+    console.log(order);
 
     const handleDelete = () => {
 
@@ -35,12 +35,15 @@ const DisplayOrders = ({ order, index, myOrders, setMyOrders }) => {
             <td>{email}</td>
             <td>{address}</td>
             <td>
-                <button onClick={handleDelete} className="btn btn-error btn-sm">Cencel</button>
+                {paid ? "" : <button onClick={handleDelete} className="btn btn-error btn-sm">Cencel</button>}
             </td>
             <td>
                 <Link to={`/dashboard/payment/${_id}`}>
                     {(!paid) && <button className="btn btn-success btn-sm">pay</button>}
-                    {paid && <p>Paid</p>}
+                    {paid && <div>
+                        <p>Paid</p>
+                        <p className="text-orange-400">TransactionId: {transjactionId}</p>
+                    </div>}
                 </Link>
             </td>
 

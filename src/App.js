@@ -28,6 +28,7 @@ import Payment from './components/Dashboard/Payment';
 import NotFound from './components/Shared/NotFound';
 import Blogs from './components/Blogs/Blogs';
 import MyPortfolio from './components/MyPortfolio/MyPortfolio';
+import ManageAllOrders from './components/Dashboard/ManageAllOrders';
 
 function App() {
 
@@ -89,6 +90,12 @@ function App() {
           <Route path="dashboard/manage-products" element={<RequireAuth>
             <RequireAdmin>
               <ManageProducts />
+            </RequireAdmin>
+          </RequireAuth>}></Route>
+
+          <Route path="dashboard/manage-all-orders" element={<RequireAuth>
+            <RequireAdmin>
+              <ManageAllOrders />
             </RequireAdmin>
           </RequireAuth>}></Route>
 
