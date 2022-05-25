@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+## Rocekt-rock 🚀 ✨
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a a website which is sells the rocket parts. likes engines, and other various parts. This organizationis works for some other company whic are enthusis to make world a bettr palce. 📗 🔥 
 
-## Available Scripts
+## [Live-site-Rocket-rock](https://rocket-rock-cce05.web.app/)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Pages      | Description | What is inside  |
+| :---        |    :----:   |          ---: |
+| Header      | A simple navbar | All the route to navigate   |
+| Banner   |  Banner for descripting what about the page | Banner has description, and an image   |
+| Purchase   | Purchase page displays four item  | The Purchase page has four item and every item has name, descriptin, price etc.   |
+| order      | The order page has some form to order the purchase page item| purcahse form page displays name, image, quantity, minimun quantity etc, detailed info about cliked Purchase item  |
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Technology used.
+- fetch method. 
+- daisy ui
+- firebase
+- tailwind Css
+- rect-firebase-hooks
+- jsonwebtoken
+- react
+- react-icons
+- react-tostify 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Features 
+- If you clcik on the Purchse button it will take you to the details about that itmes page of that particullar book.
+- Cliking on the Place order button will give you a form to give information about youself to purcahse the order.
+- database page has some routes nested in theire some are open for all user some are restricted for the admin only there has various things in the dasboard page.
+- Blogs routes give some info about assignment questions. 
+- Jwt token added with just sign in method. 
