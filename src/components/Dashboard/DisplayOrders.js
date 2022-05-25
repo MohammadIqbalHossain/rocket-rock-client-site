@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DisplayOrders = ({ order, index, myOrders, setMyOrders }) => {
 
@@ -13,7 +14,7 @@ const DisplayOrders = ({ order, index, myOrders, setMyOrders }) => {
         if (confirmation) {
             fetch(`http://localhost:5000/orders/${_id}`, {
                 method: 'DELETE',
-                
+
             })
                 .then(res => res.json())
                 .then(data => {
@@ -37,10 +38,12 @@ const DisplayOrders = ({ order, index, myOrders, setMyOrders }) => {
                 <button onClick={handleDelete} className="btn btn-error btn-sm">Cencel</button>
             </td>
             <td>
-               {(!paid) &&  <button className="btn btn-success btn-sm">pay</button>}
-               {paid && <p>Paid</p>}
+                <Link to={`/dashboard/payment/${_id}`}>
+                    {(!paid) && <button className="btn btn-success btn-sm">pay</button>}
+                    {paid && <p>Paid</p>}
+                </Link>
             </td>
-           
+
         </tr>
 
 

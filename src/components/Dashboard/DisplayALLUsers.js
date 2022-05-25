@@ -1,8 +1,11 @@
 import React from 'react';
 import {toast} from 'react-toastify';
+import {useAuthState} from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init'
 
 const DisplayALLUsers = ({users}) => {
     const {name, email, indexes, _id, phone, address} = users;
+   
     
     const handlMakeAdmin = () => {
         fetch(`http://localhost:5000/admin/${email}`, {

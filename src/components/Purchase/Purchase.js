@@ -109,7 +109,9 @@ const Purchase = () => {
                         </div>
                         <PuarchaseModal
                             minQuantity={purchase.minOrderQuantity}
-                            quantity={purchase.quantity} />
+                            quantity={purchase.quantity} 
+                            priceNum={purchase.price}
+                            />
                     </article>
                 </div>
             </section>

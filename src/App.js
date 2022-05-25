@@ -24,6 +24,7 @@ import Footer from './components/Shared/Footer';
 import MisssionSpecialist from './components/Home/OurEngineers/MisssionSpecialist';
 import OurEngineers from './components/Home/OurEngineers/OurEngineers';
 import SystemEngineer from './components/Home/OurEngineers/SystemEngineer';
+import Payment from './components/Dashboard/Payment';
 
 function App() {
 
@@ -39,8 +40,8 @@ function App() {
 
         <Route path='/ourEngineers' element={<OurEngineers />}>
 
-        <Route index element={<MisssionSpecialist />}></Route>
-        <Route path="/ourEngineers/system-enginner" element={<SystemEngineer />}></Route>
+          <Route index element={<MisssionSpecialist />}></Route>
+          <Route path="/ourEngineers/system-enginner" element={<SystemEngineer />}></Route>
 
         </Route>
 
@@ -48,6 +49,8 @@ function App() {
           <Purchase />
         </RequireAuth>}>
         </Route>
+
+
 
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard />
@@ -83,13 +86,19 @@ function App() {
             </RequireAdmin>
           </RequireAuth>}></Route>
 
+          <Route path='/dashboard/payment/:id' element={<RequireAuth>
+            <Payment />
+          </RequireAuth>}>
+
+          </Route>
+
           <Route path="dashboard/my-profile" element={<MyProfile />}></Route>
         </Route>
 
       </Routes>
-        {
-          pathname === "/" &&  <Footer />
-        }
+      {
+        pathname === "/" && <Footer />
+      }
       <ToastContainer />
     </div>
   );

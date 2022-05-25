@@ -108,7 +108,7 @@ const Header = () => {
 
                                 >
                                     <span className="ml-1  text-xs rounded">
-                                        {user?.displayName.slice(0, 5)}
+                                        {user?.displayName}
                                     </span>
                                 </p>
                             </li>

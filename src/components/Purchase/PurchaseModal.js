@@ -3,10 +3,10 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init'
 
-const PuarchaseModal = ({ minQuantity, quantity }) => {
+const PuarchaseModal = ({ minQuantity, quantity, priceNum }) => {
 
     const [user] = useAuthState(auth);
-
+   const price = parseInt(priceNum)
 
 
     const submitOrder = (e) => {
@@ -15,6 +15,7 @@ const PuarchaseModal = ({ minQuantity, quantity }) => {
         const order = {
             email: user.email,
             name: user.displayName,
+            price,
             phone: e.target.phone.value,
             address: e.target.address.value,
             quantity: e.target.quantity.value

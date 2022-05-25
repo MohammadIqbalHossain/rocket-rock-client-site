@@ -11,7 +11,7 @@ const DisplayParts = ({ part }) => {
                 <p className="text-lg my-2">{des}</p>
                 <h3>Minimun order quantity: {minOrderQuantity} </h3>
                 <h3>avilable quantity: {quantity}</h3>
-                <p>Price: {price}</p>
+                <p>Price: ${price}</p>
                 <Link to={`/purchase/${_id}`}>
                     <button className="btn btn-primary my-5">Purchase Now</button>
                 </Link>
