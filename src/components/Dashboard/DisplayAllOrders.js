@@ -6,7 +6,7 @@ const DisplayAllOrders = ({ order, refetch }) => {
 
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/unpaidOrder/${id}`, {
+        fetch(`https://nameless-reaches-54875.herokuapp.com/unpaidOrder/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
@@ -21,7 +21,7 @@ const DisplayAllOrders = ({ order, refetch }) => {
     }
 
     const handleShipped = () => {
-        fetch(`http://localhost:5000/shipped/${id}`, {
+        fetch(`https://nameless-reaches-54875.herokuapp.com/shipped/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -32,7 +32,7 @@ const DisplayAllOrders = ({ order, refetch }) => {
             .then(data => {
                 if (data.success) {
                     toast("Product is shipped")
-                    
+
                 }
             })
 
