@@ -43,8 +43,8 @@ const MyProfile = () => {
 
 
     return (
-        <div className="flex flex-col justify-center items-center h-[80vh]">
-            <div class="card flex-shrink-0 w-full max-w-3xl shadow-2xl bg-base-100 mt-20">
+        <div className="flex flex-col justify-center items-center md:h-[80vh]">
+            <div class="card flex-shrink-0 w-full max-w-3xl shadow-2xl bg-base-100 md:mt-20">
 
                 <form class="card-body" onSubmit={handleProfileSubmit}>
                     <h1 className="text-lg">Give your information.</h1>
