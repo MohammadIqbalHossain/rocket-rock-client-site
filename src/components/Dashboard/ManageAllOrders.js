@@ -6,7 +6,7 @@ import DisplayAllOrders from './DisplayAllOrders';
 
 const ManageAllOrders = () => {
 
-    const { data: allOrders, isLoading, refetch } = useQuery('allusers', () => fetch('http://localhost:5000/orders', {
+    const { data: allOrders, isLoading, refetch } = useQuery('allusers', () => fetch('https://nameless-reaches-54875.herokuapp.com/orders', {
         method: "GET",
         headers: {
             authorization: `bearer ${localStorage.getItem("accessToken")}`
