@@ -5,7 +5,7 @@ import ShowManageProducts from './ShowManageProducts';
 
 const ManageProducts = () => {
 
-  const { data, isLoading, refetch } = useQuery('allusers', () => fetch('https://nameless-reaches-54875.herokuapp.com/manageProducts', {
+  const { data, isLoading, refetch } = useQuery('allusers', () => fetch('http://localhost:3000/manageProducts', {
     method: "GET",
     headers: {
       authorization: `bearer ${localStorage.getItem("accessToken")}`

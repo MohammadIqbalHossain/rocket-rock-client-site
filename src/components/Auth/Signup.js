@@ -10,6 +10,7 @@ const Signup = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
+
     const [
         createUserWithEmailAndPassword,
         user,
@@ -54,7 +55,7 @@ const Signup = () => {
         updateProfile({ displayName: data.name });
 
         const email = data.email
-        const url = `https://nameless-reaches-54875.herokuapp.com/login`
+        const url = `http://localhost:3000/login`
         fetch(url, {
             method: 'POST',
             headers: {

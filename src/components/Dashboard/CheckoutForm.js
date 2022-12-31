@@ -23,7 +23,7 @@ const CheckoutForm = ({ orders }) => {
 
 
     useEffect(() => {
-        fetch('https://nameless-reaches-54875.herokuapp.com/create-payment-intent', {
+        fetch('http://localhost:3000/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': "application/json",
@@ -104,7 +104,7 @@ const CheckoutForm = ({ orders }) => {
 
             console.log(_id)
             console.log(payment)
-            fetch(`https://nameless-reaches-54875.herokuapp.com/order/${_id}`, {
+            fetch(`http://localhost:3000/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

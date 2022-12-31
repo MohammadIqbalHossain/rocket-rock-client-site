@@ -17,7 +17,7 @@ const Purchase = () => {
     console.log(purchase)
 
     useEffect(() => {
-        fetch(`https://nameless-reaches-54875.herokuapp.com/parts/${id}`, {
+        fetch(`http://localhost:3000/parts/${id}`, {
             method: 'GET',
             headers: {
                 authorization: `bearer ${localStorage.getItem("accessToken")}`

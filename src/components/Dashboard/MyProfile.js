@@ -21,7 +21,7 @@ const MyProfile = () => {
             phone: e.target.phone.value
         }
 
-        fetch(`https://nameless-reaches-54875.herokuapp.com/profile`, {
+        fetch(`http://localhost:3000/profile`, {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

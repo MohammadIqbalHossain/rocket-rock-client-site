@@ -7,7 +7,7 @@ const ShowManageProducts = ({ product, refetch }) => {
         const id = product._id;
         const confirmation = window.confirm("Are you sure?")
         if (confirmation) {
-            fetch(`https://nameless-reaches-54875.herokuapp.com/manageProdutc/${id}`, {
+            fetch(`http://localhost:3000/manageProdutc/${id}`, {
                 method: 'DELETE',
 
             })

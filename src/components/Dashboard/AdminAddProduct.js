@@ -16,7 +16,7 @@ const AdminAddProduct = () => {
         }
         console.log(productDetails)
 
-        fetch('https://nameless-reaches-54875.herokuapp.com/addProduct', {
+        fetch('http://localhost:3000/addProduct', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

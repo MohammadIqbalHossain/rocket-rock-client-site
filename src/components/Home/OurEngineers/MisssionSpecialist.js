@@ -14,7 +14,7 @@ const MisssionSpecialist = () => {
                     African to travel to space as a space tourist.</p>
             </article>
             <div>
-                <img src={mark}  alt="" />
+                <img src={mark} alt="" />
             </div>
 
             <div>

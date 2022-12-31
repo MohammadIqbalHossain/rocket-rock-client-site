@@ -18,7 +18,7 @@ const AddReview = () => {
 
         }
 
-        fetch('https://nameless-reaches-54875.herokuapp.com/review', {
+        fetch('http://localhost:3000/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

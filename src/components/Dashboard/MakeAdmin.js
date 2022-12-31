@@ -6,7 +6,7 @@ import DisplayALLUsers from './DisplayALLUsers';
 const MakeAdmin = () => {
 
 
-    const { data: allusers, isLoading, refetch } = useQuery('allusers', () => fetch('https://nameless-reaches-54875.herokuapp.com/admin', {
+    const { data: allusers, isLoading, refetch } = useQuery('allusers', () => fetch('http://localhost:3000/admin', {
         method: "GET",
         headers: {
             authorization: `bearer ${localStorage.getItem("accessToken")}`

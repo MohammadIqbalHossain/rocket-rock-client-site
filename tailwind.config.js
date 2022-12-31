@@ -7,3 +7,9 @@ module.exports = {
   },
   plugins: [require("daisyui")],
 }
+
+
+
+
+console.log(!!0, true == 1, true == 1);
+

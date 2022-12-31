@@ -23,7 +23,7 @@ const MyProfile = () => {
         }
 
 
-        fetch(`https://nameless-reaches-54875.herokuapp.com/update/${user?.email}`, {
+        fetch(`http://localhost:3000/update/${user?.email}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
@@ -40,8 +40,6 @@ const MyProfile = () => {
                     toast.error("It seems their something wrong");
                 }
             })
-
-
     }
 
 

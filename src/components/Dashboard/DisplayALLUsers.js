@@ -8,7 +8,7 @@ const DisplayALLUsers = ({ users }) => {
 
 
     const handlMakeAdmin = () => {
-        fetch(`https://nameless-reaches-54875.herokuapp.com/admin/${email}`, {
+        fetch(`http://localhost:3000/admin/${email}`, {
             method: "PUT",
             headers: {
                 authorization: `bearer ${localStorage.getItem("accessToken")}`

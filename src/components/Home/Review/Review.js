@@ -7,7 +7,7 @@ const Review = () => {
     const reviewForHome = allReviews.slice(0, 4);
 
     useEffect(() => {
-        fetch('https://nameless-reaches-54875.herokuapp.com/review')
+        fetch('http://localhost:3000/review')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);

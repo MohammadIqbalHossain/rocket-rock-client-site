@@ -6,7 +6,7 @@ import DisplayAllOrders from './DisplayAllOrders';
 
 const ManageAllOrders = () => {
 
-    const { data: allOrders, isLoading, refetch } = useQuery('allusers', () => fetch('https://nameless-reaches-54875.herokuapp.com/orders', {
+    const { data: allOrders, isLoading, refetch } = useQuery('allusers', () => fetch('http://localhost:3000/orders', {
         method: "GET",
         headers: {
             authorization: `bearer ${localStorage.getItem("accessToken")}`
@@ -16,8 +16,8 @@ const ManageAllOrders = () => {
     if (isLoading) {
         return <Spinner />
     }
-    
-    
+
+
 
 
     return (
@@ -37,9 +37,9 @@ const ManageAllOrders = () => {
                     <tbody>
                         {
                             allOrders.map(order => <DisplayAllOrders
-                            key={order._id}
-                            order={order}
-                            refetch={refetch}
+                                key={order._id}
+                                order={order}
+                                refetch={refetch}
                             ></DisplayAllOrders>)
                         }
 

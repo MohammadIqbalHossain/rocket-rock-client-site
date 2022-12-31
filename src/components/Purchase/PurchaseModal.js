@@ -27,12 +27,12 @@ const PuarchaseModal = ({ minQuantity, quantity, priceNum, Name }) => {
         console.log(order.quantity);
         console.log(quantity);
 
-        
+
 
         if (order.quantity < minQuantity || (order.quantity > quantity)) {
             toast.error("You are out of our range")
             setQuantityError(true);
-           
+
             return;
         }
 
@@ -41,7 +41,7 @@ const PuarchaseModal = ({ minQuantity, quantity, priceNum, Name }) => {
 
         console.log(order.phone, order.address);
 
-        fetch('https://nameless-reaches-54875.herokuapp.com/orders', {
+        fetch('http://localhost:3000/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -110,7 +110,7 @@ const PuarchaseModal = ({ minQuantity, quantity, priceNum, Name }) => {
                     </div>
 
                     <div className="">
-                        <input  className="btn btn-primary w-full my-5" type="submit" value="Submit" />
+                        <input className="btn btn-primary w-full my-5" type="submit" value="Submit" />
                     </div>
 
                 </form>

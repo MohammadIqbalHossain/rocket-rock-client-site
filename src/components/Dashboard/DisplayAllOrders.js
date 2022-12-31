@@ -6,7 +6,7 @@ const DisplayAllOrders = ({ order, refetch }) => {
 
 
     const handleDelete = () => {
-        fetch(`https://nameless-reaches-54875.herokuapp.com/unpaidOrder/${id}`, {
+        fetch(`http://localhost:3000/unpaidOrder/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
@@ -21,7 +21,7 @@ const DisplayAllOrders = ({ order, refetch }) => {
     }
 
     const handleShipped = () => {
-        fetch(`https://nameless-reaches-54875.herokuapp.com/shipped/${id}`, {
+        fetch(`http://localhost:3000/shipped/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -55,10 +55,10 @@ const DisplayAllOrders = ({ order, refetch }) => {
                         <button
                             onClick={handleShipped}
                             className="btn btn-success btn-sm">
-                           {status ? <button className="disabled">Shipped</button> : <p>Pending</p>}
-                        </button> 
+                            {status ? <button className="disabled">Shipped</button> : <p>Pending</p>}
+                        </button>
                 }
-                
+
             </td>
         </tr>
     );
