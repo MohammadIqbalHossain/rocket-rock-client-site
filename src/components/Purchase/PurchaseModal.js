@@ -24,8 +24,8 @@ const PuarchaseModal = ({ minQuantity, quantity, priceNum, Name }) => {
             quantity: e.target.quantity.value
         }
 
-        console.log(order.quantity);
-        console.log(quantity);
+        // console.log(order.quantity);
+        // console.log(quantity);
 
 
 
@@ -39,9 +39,9 @@ const PuarchaseModal = ({ minQuantity, quantity, priceNum, Name }) => {
         setQuantityError(false)
 
 
-        console.log(order.phone, order.address);
+        // console.log(order.phone, order.address);
 
-        fetch('http://localhost:3000/orders', {
+        fetch('https://rocket-rock-server-site-production.up.railway.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -54,7 +54,7 @@ const PuarchaseModal = ({ minQuantity, quantity, priceNum, Name }) => {
             .then(data => {
                 console.log(data)
                 if (data.success) {
-                    toast(`successfull orderd`)
+                    toast(`successfully orderd`)
                 }
                 else {
                     toast.error(`Something went wrong`);

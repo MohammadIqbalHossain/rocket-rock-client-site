@@ -5,7 +5,7 @@ import ShowManageProducts from './ShowManageProducts';
 
 const ManageProducts = () => {
 
-  const { data, isLoading, refetch } = useQuery('allusers', () => fetch('http://localhost:3000/manageProducts', {
+  const { data, isLoading, refetch } = useQuery('allusers', () => fetch('https://rocket-rock-server-site-production.up.railway.app/manageProducts', {
     method: "GET",
     headers: {
       authorization: `bearer ${localStorage.getItem("accessToken")}`

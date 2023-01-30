@@ -7,7 +7,7 @@ const useAdmin = user => {
         const email = user?.email;
 
         if (email) {
-            fetch(`http://localhost:3000/admin/${email}`, {
+            fetch(`https://rocket-rock-server-site-production.up.railway.app/admin/${email}`, {
                 method: "GET",
                 headers: {
                     'content-type': 'application/json',

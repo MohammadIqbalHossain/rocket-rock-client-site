@@ -7,7 +7,7 @@ const Parts = () => {
     console.log(parts);
 
     useEffect(() => {
-        fetch("http://localhost:3000/parts")
+        fetch("https://rocket-rock-server-site-production.up.railway.app/parts")
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

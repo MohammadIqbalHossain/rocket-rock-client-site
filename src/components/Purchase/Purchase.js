@@ -17,7 +17,7 @@ const Purchase = () => {
     console.log(purchase)
 
     useEffect(() => {
-        fetch(`http://localhost:3000/parts/${id}`, {
+        fetch(`https://rocket-rock-server-site-production.up.railway.app/parts/${id}`, {
             method: 'GET',
             headers: {
                 authorization: `bearer ${localStorage.getItem("accessToken")}`

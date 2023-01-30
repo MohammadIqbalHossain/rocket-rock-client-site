@@ -7,7 +7,7 @@ const Review = () => {
     const reviewForHome = allReviews.slice(0, 4);
 
     useEffect(() => {
-        fetch('http://localhost:3000/review')
+        fetch('https://rocket-rock-server-site-production.up.railway.app/review')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);

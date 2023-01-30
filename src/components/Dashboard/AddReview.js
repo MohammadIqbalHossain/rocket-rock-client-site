@@ -18,7 +18,7 @@ const AddReview = () => {
 
         }
 
-        fetch('http://localhost:3000/review', {
+        fetch('https://rocket-rock-server-site-production.up.railway.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

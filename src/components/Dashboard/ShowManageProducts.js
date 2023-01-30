@@ -7,7 +7,7 @@ const ShowManageProducts = ({ product, refetch }) => {
         const id = product._id;
         const confirmation = window.confirm("Are you sure?")
         if (confirmation) {
-            fetch(`http://localhost:3000/manageProdutc/${id}`, {
+            fetch(`https://rocket-rock-server-site-production.up.railway.app/manageProdutc/${id}`, {
                 method: 'DELETE',
 
             })

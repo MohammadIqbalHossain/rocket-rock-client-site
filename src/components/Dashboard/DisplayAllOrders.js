@@ -6,7 +6,7 @@ const DisplayAllOrders = ({ order, refetch }) => {
 
 
     const handleDelete = () => {
-        fetch(`http://localhost:3000/unpaidOrder/${id}`, {
+        fetch(`https://rocket-rock-server-site-production.up.railway.app/unpaidOrder/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
@@ -21,7 +21,7 @@ const DisplayAllOrders = ({ order, refetch }) => {
     }
 
     const handleShipped = () => {
-        fetch(`http://localhost:3000/shipped/${id}`, {
+        fetch(`https://rocket-rock-server-site-production.up.railway.app/shipped/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

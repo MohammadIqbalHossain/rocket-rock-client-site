@@ -23,7 +23,7 @@ const CheckoutForm = ({ orders }) => {
 
 
     useEffect(() => {
-        fetch('http://localhost:3000/create-payment-intent', {
+        fetch('https://rocket-rock-server-site-production.up.railway.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': "application/json",
@@ -104,7 +104,7 @@ const CheckoutForm = ({ orders }) => {
 
             console.log(_id)
             console.log(payment)
-            fetch(`http://localhost:3000/order/${_id}`, {
+            fetch(`https://rocket-rock-server-site-production.up.railway.app/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

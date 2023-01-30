@@ -8,7 +8,7 @@ const DisplayALLUsers = ({ users }) => {
 
 
     const handlMakeAdmin = () => {
-        fetch(`http://localhost:3000/admin/${email}`, {
+        fetch(`https://rocket-rock-server-site-production.up.railway.app/admin/${email}`, {
             method: "PUT",
             headers: {
                 authorization: `bearer ${localStorage.getItem("accessToken")}`

@@ -58,7 +58,7 @@ const Login = () => {
 
         const email = data.email
         console.log(email);
-        const url = `http://localhost:3000/login`
+        const url = `https://rocket-rock-server-site-production.up.railway.app/login`
         fetch(url, {
             method: 'POST',
             headers: {

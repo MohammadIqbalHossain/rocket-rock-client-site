@@ -23,7 +23,7 @@ const MyProfile = () => {
         }
 
 
-        fetch(`http://localhost:3000/update/${user?.email}`, {
+        fetch(`https://rocket-rock-server-site-production.up.railway.app/update/${user?.email}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"

@@ -14,7 +14,7 @@ const Payment = () => {
 
     const { id } = useParams()
 
-    const url = `http://localhost:3000/payment/${id}`;
+    const url = `https://rocket-rock-server-site-production.up.railway.app/payment/${id}`;
 
     const { data: orders, isLoading, refetch } = useQuery(['orders', id], () => fetch(url, {
         method: "GET",
