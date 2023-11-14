@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import avatar from '../../assets/images/avatar.svg';
 import auth from '../../firebase.init';
 import PuarchaseModal from './PurchaseModal';
-import avatar from '../../assets/images/avatar.svg'
 
 const Purchase = () => {
 
@@ -17,7 +16,7 @@ const Purchase = () => {
     console.log(purchase)
 
     useEffect(() => {
-        fetch(`https://rocket-rock-server-site-production.up.railway.app/parts/${id}`, {
+        fetch(`https://rocket-rock.onrender.com/parts/${id}`, {
             method: 'GET',
             headers: {
                 authorization: `bearer ${localStorage.getItem("accessToken")}`

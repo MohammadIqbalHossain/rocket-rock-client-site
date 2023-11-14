@@ -21,7 +21,7 @@ const MyProfile = () => {
             phone: e.target.phone.value
         }
 
-        fetch(`https://rocket-rock-server-site-production.up.railway.app/profile`, {
+        fetch(`https://rocket-rock.onrender.com/profile`, {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

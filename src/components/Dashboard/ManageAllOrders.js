@@ -1,12 +1,11 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import { toast } from 'react-toastify';
 import Spinner from '../Shared/Spinner';
 import DisplayAllOrders from './DisplayAllOrders';
 
 const ManageAllOrders = () => {
 
-    const { data: allOrders, isLoading, refetch } = useQuery('allusers', () => fetch('https://rocket-rock-server-site-production.up.railway.app/orders', {
+    const { data: allOrders, isLoading, refetch } = useQuery('allusers', () => fetch('https://rocket-rock.onrender.com/orders', {
         method: "GET",
         headers: {
             authorization: `bearer ${localStorage.getItem("accessToken")}`

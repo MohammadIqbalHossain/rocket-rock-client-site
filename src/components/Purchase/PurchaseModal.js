@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
-import auth from '../../firebase.init'
+import auth from '../../firebase.init';
 
 const PuarchaseModal = ({ minQuantity, quantity, priceNum, Name }) => {
 
@@ -41,7 +41,7 @@ const PuarchaseModal = ({ minQuantity, quantity, priceNum, Name }) => {
 
         // console.log(order.phone, order.address);
 
-        fetch('https://rocket-rock-server-site-production.up.railway.app/orders', {
+        fetch('https://rocket-rock.onrender.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

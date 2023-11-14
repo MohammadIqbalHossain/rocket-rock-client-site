@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { FcGoogle } from 'react-icons/fc';
-import { useForm } from 'react-hook-form';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init'
+import { useForm } from 'react-hook-form';
+import { FcGoogle } from 'react-icons/fc';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import Spinner from '../Shared/Spinner';
 
 const Signup = () => {
@@ -55,7 +55,7 @@ const Signup = () => {
         updateProfile({ displayName: data.name });
 
         const email = data.email
-        const url = `https://rocket-rock-server-site-production.up.railway.app/login`
+        const url = `https://rocket-rock.onrender.com/login`
         fetch(url, {
             method: 'POST',
             headers: {

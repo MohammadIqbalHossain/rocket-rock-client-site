@@ -1,14 +1,12 @@
 import React from 'react';
 import { toast } from 'react-toastify';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init'
 
 const DisplayALLUsers = ({ users }) => {
     const { name, email, indexes, _id, phone, address } = users;
 
 
     const handlMakeAdmin = () => {
-        fetch(`https://rocket-rock-server-site-production.up.railway.app/admin/${email}`, {
+        fetch(`https://rocket-rock.onrender.com/admin/${email}`, {
             method: "PUT",
             headers: {
                 authorization: `bearer ${localStorage.getItem("accessToken")}`

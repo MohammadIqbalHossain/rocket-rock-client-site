@@ -16,7 +16,7 @@ const AdminAddProduct = () => {
         }
         console.log(productDetails)
 
-        fetch('https://rocket-rock-server-site-production.up.railway.app/addProduct', {
+        fetch('https://rocket-rock.onrender.com/addProduct', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

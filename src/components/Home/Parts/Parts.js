@@ -7,7 +7,7 @@ const Parts = () => {
     console.log(parts);
 
     useEffect(() => {
-        fetch("https://rocket-rock-server-site-production.up.railway.app/parts")
+        fetch("https://rocket-rock.onrender.com/parts")
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

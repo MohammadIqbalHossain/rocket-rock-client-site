@@ -6,7 +6,7 @@ import DisplayALLUsers from './DisplayALLUsers';
 const MakeAdmin = () => {
 
 
-    const { data: allusers, isLoading, refetch } = useQuery('allusers', () => fetch('https://rocket-rock-server-site-production.up.railway.app/admin', {
+    const { data: allusers, isLoading, refetch } = useQuery('allusers', () => fetch('https://rocket-rock.onrender.com/admin', {
         method: "GET",
         headers: {
             authorization: `bearer ${localStorage.getItem("accessToken")}`

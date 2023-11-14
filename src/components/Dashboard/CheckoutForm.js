@@ -1,7 +1,5 @@
-import { async } from '@firebase/util';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
-import Spinner from '../Shared/Spinner';
 
 const CheckoutForm = ({ orders }) => {
     const stripe = useStripe();
@@ -23,7 +21,7 @@ const CheckoutForm = ({ orders }) => {
 
 
     useEffect(() => {
-        fetch('https://rocket-rock-server-site-production.up.railway.app/create-payment-intent', {
+        fetch('https://rocket-rock.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': "application/json",
@@ -104,7 +102,7 @@ const CheckoutForm = ({ orders }) => {
 
             console.log(_id)
             console.log(payment)
-            fetch(`https://rocket-rock-server-site-production.up.railway.app/order/${_id}`, {
+            fetch(`https://rocket-rock.onrender.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

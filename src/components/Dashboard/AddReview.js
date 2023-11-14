@@ -18,7 +18,7 @@ const AddReview = () => {
 
         }
 
-        fetch('https://rocket-rock-server-site-production.up.railway.app/review', {
+        fetch('https://rocket-rock.onrender.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

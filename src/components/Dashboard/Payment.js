@@ -1,10 +1,10 @@
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Spinner from '../Shared/Spinner';
-import { loadStripe } from '@stripe/stripe-js';
 import CheckoutForm from './CheckoutForm';
-import { Elements } from '@stripe/react-stripe-js';
 
 
 const stripePromise = loadStripe('pk_test_51L14yAFnm89k40kTV81n5y1mxhYzTDPoLJFDlT6lCT8p7q7nPpjVX03MKdq1YfK5us5BzYrVUL2cil7uJu0z2Vp500ZCg165BM');
@@ -14,7 +14,7 @@ const Payment = () => {
 
     const { id } = useParams()
 
-    const url = `https://rocket-rock-server-site-production.up.railway.app/payment/${id}`;
+    const url = `https://rocket-rock.onrender.com/payment/${id}`;
 
     const { data: orders, isLoading, refetch } = useQuery(['orders', id], () => fetch(url, {
         method: "GET",

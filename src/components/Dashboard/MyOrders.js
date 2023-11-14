@@ -12,7 +12,7 @@ const MyOrders = () => {
 
 
     useEffect(() => {
-        fetch(`https://rocket-rock-server-site-production.up.railway.app/myOrders/${email}`)
+        fetch(`https://rocket-rock.onrender.com/myOrders/${email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, [])

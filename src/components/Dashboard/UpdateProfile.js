@@ -1,6 +1,5 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
@@ -23,7 +22,7 @@ const MyProfile = () => {
         }
 
 
-        fetch(`https://rocket-rock-server-site-production.up.railway.app/update/${user?.email}`, {
+        fetch(`https://rocket-rock.onrender.com/update/${user?.email}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"

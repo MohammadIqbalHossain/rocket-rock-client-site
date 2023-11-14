@@ -12,7 +12,7 @@ const DisplayOrders = ({ order, index, myOrders, setMyOrders }) => {
 
         const confirmation = window.confirm("Are You sure?")
         if (confirmation) {
-            fetch(`https://rocket-rock-server-site-production.up.railway.app/orders/${_id}`, {
+            fetch(`https://rocket-rock.onrender.com/orders/${_id}`, {
                 method: 'DELETE',
 
             })
